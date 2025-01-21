@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Madrit: " + persona1.getNombre());*/
 
         /*Clase Televisor*/
-        Televisor canal=new Televisor(1,5);
+        /*Televisor canal=new Televisor(1,5);
 
         System.out.println(canal.getCanal());
         System.out.println(canal.getVolumen());
@@ -29,6 +29,14 @@ public class Main {
         canal.bajarCanal();
         System.out.println(canal.getCanal());
         canal.subirCanal();
-        System.out.println(canal.getCanal());
+        System.out.println(canal.getCanal());*/
+
+        /*Clase Paciente*/
+        Paciente paciente_fit = new Paciente("Llados", 40, 'M', 130.0F, 1.7F);
+        paciente_fit.mostrarInfoPaciente();
+        Paciente paciente_fav = new Paciente();
+        paciente_fav.mostrarInfoPaciente();
+        Paciente paciente_pov = new Paciente("Boix",18,'H');
+        paciente_pov.mostrarInfoPaciente();
     }
 }
