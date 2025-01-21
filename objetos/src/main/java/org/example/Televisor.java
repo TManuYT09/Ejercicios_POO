@@ -1,8 +1,8 @@
 package org.example;
 
 public class Televisor {
-    private int canal;
-    private int volumen;
+    private int canal=1;
+    private int volumen=5;
 
     public Televisor(){
 
