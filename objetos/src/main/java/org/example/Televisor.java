@@ -50,4 +50,9 @@ public class Televisor {
         }
         System.out.println("Volumen: "+this.volumen);
     }
+
+    @Override
+    public String toString(){
+        return "Canal: "+this.canal+" con el volumen "+this.volumen;
+    }
 }

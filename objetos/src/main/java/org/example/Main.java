@@ -40,36 +40,45 @@ public class Main {
 //        paciente_fav.mostrarInfoPaciente();
 //        Paciente paciente_pov = new Paciente("Boix",18,'H');
 //        paciente_pov.mostrarInfoPaciente();
-        Scanner teclado = new Scanner(System.in);
-        System.out.println("Introduce un nombre: ");
-        String nombre = teclado.next();
-        System.out.println("Introduce la edad: ");
-        int edad = teclado.nextInt();
-        System.out.println("Introduce tu sexo: ");
-        char genero = teclado.next().charAt(0);
-        System.out.println("Introduce tu peso: ");
-        float peso = teclado.nextFloat();
-        System.out.println("Introduce tu altura: ");
-        float altura = teclado.nextFloat();
+//        Scanner teclado = new Scanner(System.in);
+//        System.out.println("Introduce un nombre: ");
+//        String nombre = teclado.next();
+//        System.out.println("Introduce la edad: ");
+//        int edad = teclado.nextInt();
+//        System.out.println("Introduce tu sexo: ");
+//        char genero = teclado.next().charAt(0);
+//        System.out.println("Introduce tu peso: ");
+//        float peso = teclado.nextFloat();
+//        System.out.println("Introduce tu altura: ");
+//        float altura = teclado.nextFloat();
+//
+//        Paciente paciente1 = new Paciente();
+//        Paciente paciente2 = new Paciente(nombre, edad, genero);
+//        Paciente paciente3 = new Paciente(nombre, edad, genero, peso, altura);
+//
+//        paciente1.setNombre("Paco");
+//        paciente1.setEdad(35);
+//        paciente1.setSexo('M');
+//        paciente1.setPeso(87);
+//        paciente1.setAltura(1.95F);
+//
+//        System.out.println(paciente1);
+//        System.out.println(paciente2);
+//        System.out.println(paciente3);
+//
+//        comprobarPeso(paciente1);
+//        comprobarPeso(paciente2);
+//        comprobarPeso(paciente3);
+//
+//        mayorEdad(paciente1);
+//        mayorEdad(paciente2);
+//        mayorEdad(paciente3);
 
-        Paciente paciente1 = new Paciente();
-        Paciente paciente2 = new Paciente(nombre, edad, genero);
-        Paciente paciente3 = new Paciente(nombre, edad, genero, peso, altura);
+        Estudiante estudiante1 = new Estudiante("Pepa");
+        Estudiante estudiante2 = new Estudiante("Pepa", "1ºESO","prueba@noseque");
 
-        paciente1.setNombre("Paco");
-        paciente1.setEdad(35);
-        paciente1.setSexo('M');
-        paciente1.setPeso(87);
-        paciente1.setAltura(1.95F);
-
-        comprobarPeso(paciente1);
-        comprobarPeso(paciente2);
-        comprobarPeso(paciente3);
-
-        mayorEdad(paciente1);
-        mayorEdad(paciente2);
-        mayorEdad(paciente3);
-
+        System.out.println(estudiante1);
+        System.out.println(estudiante2);
     }
     public static void comprobarPeso(Paciente paciente){
         int imc = paciente.calcularIMC();

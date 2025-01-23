@@ -125,4 +125,9 @@ public class Paciente {
     public void setPeso(float peso) {
         this.peso = peso;
     }
+
+    @Override
+    public String toString(){
+        return "Paciente: con nombre "+this.nombre+" y "+this.edad+" años de edad. Género "+this.sexo+" y dni: "+this.dni+" con una altura de "+this.altura+" y un peso de "+this.peso;
+    }
 }
