@@ -74,12 +74,18 @@ public class Main {
 //        mayorEdad(paciente2);
 //        mayorEdad(paciente3);
 
-        Estudiante estudiante1 = new Estudiante("Pepa");
-        Estudiante estudiante2 = new Estudiante("Pepa", "1ºESO","prueba@noseque");
-
-        System.out.println(estudiante1);
-        System.out.println(estudiante2);
+        /*Clase Estudiantes*/
+//        Estudiante estudiante1 = new Estudiante("Pepa");
+//        Estudiante estudiante2 = new Estudiante("Pepa", "1ºESO","prueba@noseque");
+//
+//        System.out.println(estudiante1);
+//        System.out.println(estudiante2);
+        Libro libro1 = new Libro("La novia de Pol", "Laura P.");
+        System.out.println(libro1);
+        Libro libro2 = new Libro("La novia de Pol 2: Ahora es personal", "laura P.");
+        System.out.println(libro2);
     }
+
     public static void comprobarPeso(Paciente paciente){
         int imc = paciente.calcularIMC();
 
