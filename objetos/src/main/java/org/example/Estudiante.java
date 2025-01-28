@@ -8,6 +8,7 @@ public class Estudiante {
     private String curso;
     private int nia;
     private String email;
+    private Libro libroPresato;
 
     public Estudiante(String nombre){
         this.nombre=nombre;
@@ -39,6 +40,10 @@ public class Estudiante {
         return email;
     }
 
+    public Libro getLibroPresato() {
+        return libroPresato;
+    }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -51,9 +56,18 @@ public class Estudiante {
         this.email = email;
     }
 
+    public void setLibroPresato(Libro libroPresato) {
+        this.libroPresato = libroPresato;
+    }
+
     @Override
     public String toString(){
-        return "Alumno: [nombre= "+nombre+" curso= "+curso+" nia= "+nia+" email= "+email+"]";
+        if (libroPresato.getTitulo()!=null){
+            return "Alumno: [nombre= "+nombre+" curso= "+curso+" nia= "+nia+" email= "+email+" libroPrestado="+ libroPresato.getTitulo() +"]";
+        }else {
+            return "Alumno: [nombre= "+nombre+" curso= "+curso+" nia= "+nia+" email= "+email+"]";
+        }
+
     }
 
     public static int obtenerTotalEstudiantes(){
