@@ -82,18 +82,24 @@ public class Main {
 //        System.out.println(estudiante2);
 
         Estudiante estudiante1 = new Estudiante("Manuel","2ºASIR","noseque@alu.edu.gva.es");
-        Editoral editoral = new Editoral("Freelance","España");
-        Libro libro1 = new Libro("La novia de Pol", "Laura P.",editoral);
-        Libro libro2 = new Libro("La novia de Pol 2: Ahora es personal", "laura P.",editoral);
+        Editorial editorial = new Editorial("Freelance","España");
+        Libro libro1 = new Libro("La novia de Pol","Laura P.",editorial);
+        Libro libro2 = new Libro("La novia de Pol segunda saga","Laura P.",editorial);
         System.out.println(libro1);
         System.out.println(libro2);
-        libro1.prestar(estudiante1);
+
         System.out.println(libro1);
         System.out.println(estudiante1);
+
         System.out.println(Libro.getLibrosDisponibles());
         libro1.devolver(estudiante1);
         System.out.println(libro1);
         System.out.println(estudiante1);
+
+        System.out.println(Libro.getLibrosDisponibles());
+        libro1.devolver(estudiante1);
+
+
     }
 
     public static void comprobarPeso(Paciente paciente){

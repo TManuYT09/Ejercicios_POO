@@ -1,10 +1,10 @@
 package org.example;
 
-public class Editoral {
+public class Editorial {
     private String nombre;
     private String pais;
 
-    public Editoral(String nombre, String pais){
+    public Editorial(String nombre, String pais){
         this.nombre=nombre;
         this.pais=pais;
     }
@@ -13,12 +13,12 @@ public class Editoral {
         return nombre;
     }
 
-    public String getPais() {
-        return pais;
-    }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getPais() {
+        return pais;
     }
 
     public void setPais(String pais) {
@@ -27,6 +27,6 @@ public class Editoral {
 
     @Override
     public String toString(){
-        return "Editorial : [nombre="+getNombre()+" pais="+getPais()+" ]";
+        return "Editorial : [ nombre=" + getNombre() +  " pais=" + getPais() + " ]";
     }
 }

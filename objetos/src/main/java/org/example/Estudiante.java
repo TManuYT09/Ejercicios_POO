@@ -2,13 +2,13 @@ package org.example;
 
 public class Estudiante {
     public static int contadorEstudiantes = 0;
-    public static final String FORMATO_CORREO="^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
+    public static final String FORMATO_CORREO = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
 
     private String nombre;
     private String curso;
     private int nia;
     private String email;
-    private Libro libroPresato;
+    private Libro libroPrestado;
 
     public Estudiante(String nombre){
         this.nombre=nombre;
@@ -16,7 +16,7 @@ public class Estudiante {
         nia=contadorEstudiantes;
     }
 
-    public Estudiante(String nombre, String curso, String email){
+    public Estudiante (String nombre, String curso, String email){
         this.nombre=nombre;
         this.curso=curso;
         this.email=email;
@@ -24,50 +24,49 @@ public class Estudiante {
         nia=contadorEstudiantes;
     }
 
-    public String getNombre() {
+    public String getNombre(){
         return nombre;
     }
 
-    public String getCurso() {
+    public String getCurso(){
         return curso;
     }
 
-    public int getNia() {
+    public int getNia(){
         return nia;
     }
 
-    public String getEmail() {
+    public String getEmail(){
         return email;
     }
 
-    public Libro getLibroPresato() {
-        return libroPresato;
+    public void setNombre(String nombre){
+        this.nombre=nombre;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setCurso(String curso){
+        this.curso=curso;
     }
 
-    public void setCurso(String curso) {
-        this.curso = curso;
+    public void setEmail(String email){
+        this.email=email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public Libro getLibroPrestado() {
+        return libroPrestado;
     }
 
-    public void setLibroPresato(Libro libroPresato) {
-        this.libroPresato = libroPresato;
+    public void setLibroPrestado(Libro libroPrestado) {
+        this.libroPrestado = libroPrestado;
     }
 
     @Override
     public String toString(){
-        if (libroPresato.getTitulo()!=null){
-            return "Alumno: [nombre= "+nombre+" curso= "+curso+" nia= "+nia+" email= "+email+" libroPrestado="+ libroPresato.getTitulo() +"]";
-        }else {
-            return "Alumno: [nombre= "+nombre+" curso= "+curso+" nia= "+nia+" email= "+email+"]";
+        if (libroPrestado != null){
+            return "Alumno: [nombre= " + nombre + " curso=" + curso + " nia=" + nia + " email= " + email + " libroPrestado=" + libroPrestado.getTitulo() + "]";
+        }else{
+            return "Alumno: [nombre= " + nombre + " curso=" + curso + " nia=" + nia + " email= " + email + "]";
         }
-
     }
 
     public static int obtenerTotalEstudiantes(){
@@ -75,6 +74,6 @@ public class Estudiante {
     }
 
     public static boolean validarCorreo(String email){
-        return email.matches(FORMATO_CORREO) && email!=null;
+        return email.matches(FORMATO_CORREO) && email != null;
     }
 }
