@@ -83,12 +83,18 @@ public class Main {
 
         Estudiante estudiante1 = new Estudiante("Manuel","2ºASIR","noseque@alu.edu.gva.es");
         Editorial editorial = new Editorial("Freelance","España");
+        System.out.println(editorial);
         Libro libro1 = new Libro("La novia de Pol","Laura P.",editorial);
+        System.out.println(editorial);
         Libro libro2 = new Libro("La novia de Pol segunda saga","Laura P.",editorial);
+        System.out.println(editorial);
         System.out.println(libro1);
         System.out.println(libro2);
-
+        Prestamo prestamo1=libro1.prestar(estudiante1);
         System.out.println(libro1);
+        System.out.println(estudiante1);
+
+        Prestamo prestamo2=libro2.prestar(estudiante1);
         System.out.println(estudiante1);
 
         System.out.println(Libro.getLibrosDisponibles());
@@ -98,7 +104,19 @@ public class Main {
 
         System.out.println(Libro.getLibrosDisponibles());
         libro1.devolver(estudiante1);
+        libro2.devolver(estudiante1);
+        System.out.println(estudiante1);
 
+//        Persona_Temp persona1 = new Persona_Temp("Luis","Sanchez","12345213X",20,40);
+//        Equipo equipo1 = new Equipo("Real Mutxamel");
+//        System.out.println(equipo1);
+//
+//        equipo1.anyadirComponente(persona1);
+//        System.out.println(equipo1);
+//        equipo1.anyadirComponente(persona1);
+//        System.out.println(equipo1.getComponentes());
+//        equipo1.anyadirComponente(persona1);
+//        System.out.println(equipo1.getComponentes());
 
     }
 
