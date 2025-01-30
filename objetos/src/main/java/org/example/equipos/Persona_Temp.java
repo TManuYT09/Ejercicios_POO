@@ -1,4 +1,4 @@
-package org.example;
+package org.example.equipos;
 
 public class Persona_Temp {
     private String nombre;

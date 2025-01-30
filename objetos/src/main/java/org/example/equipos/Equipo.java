@@ -1,7 +1,5 @@
 package org.example.equipos;
 
-import org.example.Persona_Temp;
-
 import java.util.ArrayList;
 
 public class Equipo {
