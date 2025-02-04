@@ -16,7 +16,9 @@ public class Programa {
         temporadas=0;
         listaEmpleados=new ArrayList<>();
         listaInvitados=new ArrayList<>();
-
+        if (director!=null){
+            insertarEmpleado(director,"director");
+        }
     }
 
     public String getNombre() {
@@ -121,10 +123,12 @@ public class Programa {
 
     public void insertarEmpleado(String nombre, String cargo){
         Empleado empleado = new Empleado(nombre,cargo);
+        listaEmpleados.add(empleado);
     }
 
     public void insertarInvitado(String nombre, String profesion, int temporada){
         Invitado invitado = new Invitado(nombre,profesion, temporada);
+        listaInvitados.add(invitado);
     }
 
     @Override

@@ -40,6 +40,7 @@ public class Empleado {
     }
 
     public String asignarId(){
+        numId++;
         return String.format("%03d",numId);
     }
 
