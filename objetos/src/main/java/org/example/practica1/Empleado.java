@@ -16,7 +16,7 @@ public class Empleado {
         id=IDEP+asignarId();
         this.nombre=nombre;
         this.cargo=asignarCargo(cargo);
-        asignarDirector(cargo);
+        director=null;
     }
 
     public String getId() {
@@ -51,12 +51,6 @@ public class Empleado {
             }
         }
         return "pte";
-    }
-
-    public void asignarDirector(String cargo){
-        if (cargo.equals("director")){
-            director=null;
-        }
     }
 
     @Override

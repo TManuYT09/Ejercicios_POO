@@ -1,0 +1,43 @@
+@startuml
+
+class Estudiante {
+    -nombre: String
+    -curso: String
+    -nia: int
+    -email: String
+    -librosPrestados: ArrayList<Libro>
+    +anyadirLibro(libro: Libro): void
+    +borrarLibro(libro: Libro): void
+}
+
+class Libro {
+    -titulo: String
+    -autor: String
+    -id: String
+    -disponible: boolean
+    -estudiantePrestado: Estudiante
+    -editorial: Editorial
+    +prestar(estudiante: Estudiante): Prestamo
+    +devolver(estudiante: Estudiante): void
+}
+
+class Prestamo {
+    -estudiante: Estudiante
+    -libro: Libro
+    -fecha: LocalDate
+}
+
+class Editorial {
+    -nombre: String
+    -pais: String
+    -listaLibros: ArrayList<Libro>
+    +anyadirLibro(libro: Libro): void
+    +eliminarLibro(libro: Libro): void
+}
+
+Estudiante "1" o-- "*" Libro : posee >
+Libro "1" -- "1" Prestamo : genera >
+Editorial "1" o-- "*" Libro : publica >
+
+@enduml
+

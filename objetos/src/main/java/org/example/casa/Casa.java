@@ -3,8 +3,10 @@ package org.example.casa;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Casa {
+public class Casa {
+
     Scanner teclado = new Scanner(System.in);
+
     private String direccion;
     private ArrayList<Habitacion> habitaciones; // COMPOSICIÓN: la Casa tiene habitaciones
     private Propietario propietario;
@@ -15,65 +17,101 @@ class Casa {
         setPropietario();
     }
 
-    public void agregarHabitacion(String nombre, double metrosCuadrados) {
-        for (Habitacion hab:habitaciones){
-            if (hab.getNombre().equals(nombre)){
-                System.out.println("La habitación ya existe");
-                return;
+    public void setPropietario(){
+        System.out.println("Introduce un propietario: ");
+        String nombre = teclado.next();
+        System.out.println("Introduce su edad: ");
+        int edad = teclado.nextInt();
+        propietario=new Propietario(nombre,edad);
+    }
+
+    public void agregarHabitacion(String nombre, int metrosCuadrados) {
+
+        if(!existeHabitacion(nombre)){
+            Habitacion habitacion = new Habitacion(nombre,metrosCuadrados); //solamente la Casa crea las habitaciones
+            habitaciones.add(habitacion);
+        }else{
+            System.out.println("La habitación ya existe");
+        }
+
+    }
+
+    public boolean existeHabitacion(String nombre){
+
+        for (Habitacion hab : habitaciones){
+            if(hab.getNombre().equals(nombre)){
+                return true;
             }
         }
 
-        Habitacion habitacion = new Habitacion(nombre,metrosCuadrados); //solamente la Casa crea las habitaciones
-        habitaciones.add(habitacion);
+        return false;
+    }
+
+    public void borrarHabitacion(String nombre){
+
+        if(existeHabitacion(nombre)){
+            for (int i = 0; i < habitaciones.size(); i++) {
+
+                if(habitaciones.get(i).getNombre().equals(nombre)){
+                    habitaciones.remove(i);
+                    return;
+                }
+            }
+        }else{
+            System.out.println("La habitación no existe");
+        }
     }
 
     public void mostrarHabitaciones() {
-        System.out.println("Casa en "+direccion+" tiene: "+habitaciones.size()+" habitaciones: ");
-        for (Habitacion hab:habitaciones){
-            System.out.println("- "+hab.getNombre()+" ("+hab.getMetrosCuadrados()+"m2)");
+        //System.out.println("Casa en " + direccion + " tiene las siguientes habitaciones: " + habitaciones);
+        System.out.println("Casa con propietario " + propietario.getNombre() + " en " + direccion + " tiene " + habitaciones.size() + " habitaciones: ");
+
+        for (Habitacion habitacion : habitaciones){
+            System.out.println("- " + habitacion.getNombre() + " (" + habitacion.getMetrosCuadrados() + " m2).");
         }
-        System.out.println("Propietario="+propietario);
+
     }
 
     public Habitacion getHabitacionMasGrande(){
-        Habitacion mayor=habitaciones.get(0);
 
-        for(Habitacion hab:habitaciones){
-            if (hab.getMetrosCuadrados()> mayor.getMetrosCuadrados()){
-                mayor=hab;
+        Habitacion mayor = habitaciones.get(0);
+
+        for (Habitacion habitacion : habitaciones){
+            if(habitacion.getMetrosCuadrados()>mayor.getMetrosCuadrados()){
+                mayor=habitacion;
             }
         }
 
         return mayor;
     }
 
-    public void eliminarHabitacion(String nombre){
+    public void calcularHabitacionMasConsumo(){
+
+        double aux = 0;
+        double aux_ant = 0;
+        Habitacion mayor = habitaciones.get(0);
+
         for (Habitacion hab : habitaciones){
-            if (hab.getNombre().equals(nombre)){
-                habitaciones.remove(hab);
-                return;
+            aux = hab.calcularConsumoHabitacion();
+            if(aux>aux_ant){
+                mayor = hab;
             }
         }
+
+        System.out.println("La habitación que más consume es: " +  mayor.getNombre() + " con " + mayor.calcularConsumoHabitacion() + "kWh");
+
     }
 
     public Propietario getPropietario() {
         return propietario;
     }
 
-    public void setPropietario() {
-        System.out.println("Inserte propietari@:");
-        String nombre = teclado.next();
-        System.out.println("Edad del propietari@:");
-        int edad = teclado.nextInt();
-        this.propietario=new Propietario(nombre, edad);
+    public ArrayList<Habitacion> getHabitaciones() {
+        return habitaciones;
     }
 
-    @Override
-    public String toString() {
-        return "Casa{" +
-                "habitaciones=" + habitaciones +
-                ", propietario=" + propietario +
-                ", direccion='" + direccion + '\'' +
-                '}';
+    public void setHabitaciones(ArrayList<Habitacion> habitaciones) {
+        this.habitaciones = habitaciones;
     }
+
 }
