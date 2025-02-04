@@ -39,6 +39,10 @@ public class Empleado {
         this.nombre = nombre;
     }
 
+    public void setDirector(Empleado director) {
+        this.director = director;
+    }
+
     public String asignarId(){
         numId++;
         return String.format("%03d",numId);
@@ -47,10 +51,15 @@ public class Empleado {
     public String asignarCargo(String cargo){
         for (int i = 0; i < CARGOS.length; i++) {
             if (CARGOS[i].equals(cargo)){
+                asignarDirector(director);
                 return cargo;
             }
         }
         return "pte";
+    }
+
+    public void asignarDirector(Empleado director){
+        this.director=director;
     }
 
     @Override

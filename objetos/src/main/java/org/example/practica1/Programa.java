@@ -1,5 +1,6 @@
 package org.example.practica1;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Programa {
@@ -123,6 +124,11 @@ public class Programa {
 
     public void insertarEmpleado(String nombre, String cargo){
         Empleado empleado = new Empleado(nombre,cargo);
+        if (cargo.equals("director")){
+            director=empleado;
+        }else {
+            empleado.setDirector(director);
+        }
         listaEmpleados.add(empleado);
     }
 

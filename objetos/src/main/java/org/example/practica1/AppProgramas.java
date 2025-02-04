@@ -22,7 +22,5 @@ public class AppProgramas {
         el_hormiguero.insertarInvitado("Aitana","cantante",1);
         //ver invitados del programa
         System.out.println(el_hormiguero.getListaInvitados());
-
-
     }
 }
