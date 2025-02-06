@@ -2,8 +2,6 @@ package org.example.pruebas_lombok;
 
 import lombok.*;
 
-import java.util.Objects;
-
 @AllArgsConstructor
 @Getter @Setter
 @ToString
