@@ -1,7 +1,5 @@
 package org.example.practica1;
 
-import java.util.Arrays;
-
 public class Empleado {
     private static int numId=0;
     final static String IDEP = "EP";

@@ -1,6 +1,5 @@
 package org.example.practica1;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Programa {
