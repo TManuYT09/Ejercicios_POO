@@ -4,6 +4,7 @@ import org.example.biblioteca.Editorial;
 import org.example.biblioteca.Estudiante;
 import org.example.biblioteca.Libro;
 import org.example.biblioteca.Prestamo;
+import org.example.pruebas_lombok.Instituto;
 
 public class Main {
     public static void main(String[] args) {
@@ -84,31 +85,31 @@ public class Main {
 //        System.out.println(estudiante1);
 //        System.out.println(estudiante2);
 
-        Estudiante estudiante1 = new Estudiante("Manuel","2ºASIR","noseque@alu.edu.gva.es");
-        Editorial editorial = new Editorial("Freelance","España");
-        System.out.println(editorial);
-        Libro libro1 = new Libro("La novia de Pol","Laura P.",editorial);
-        System.out.println(editorial);
-        Libro libro2 = new Libro("La novia de Pol segunda saga","Laura P.",editorial);
-        System.out.println(editorial);
-        System.out.println(libro1);
-        System.out.println(libro2);
-        Prestamo prestamo1=libro1.prestar(estudiante1);
-        System.out.println(libro1);
-        System.out.println(estudiante1);
-
-        Prestamo prestamo2=libro2.prestar(estudiante1);
-        System.out.println(estudiante1);
-
-        System.out.println(Libro.getLibrosDisponibles());
-        libro1.devolver(estudiante1);
-        System.out.println(libro1);
-        System.out.println(estudiante1);
-
-        System.out.println(Libro.getLibrosDisponibles());
-        libro1.devolver(estudiante1);
-        libro2.devolver(estudiante1);
-        System.out.println(estudiante1);
+//        Estudiante estudiante1 = new Estudiante("Manuel","2ºASIR","noseque@alu.edu.gva.es");
+//        Editorial editorial = new Editorial("Freelance","España");
+//        System.out.println(editorial);
+//        Libro libro1 = new Libro("La novia de Pol","Laura P.",editorial);
+//        System.out.println(editorial);
+//        Libro libro2 = new Libro("La novia de Pol segunda saga","Laura P.",editorial);
+//        System.out.println(editorial);
+//        System.out.println(libro1);
+//        System.out.println(libro2);
+//        Prestamo prestamo1=libro1.prestar(estudiante1);
+//        System.out.println(libro1);
+//        System.out.println(estudiante1);
+//
+//        Prestamo prestamo2=libro2.prestar(estudiante1);
+//        System.out.println(estudiante1);
+//
+//        System.out.println(Libro.getLibrosDisponibles());
+//        libro1.devolver(estudiante1);
+//        System.out.println(libro1);
+//        System.out.println(estudiante1);
+//
+//        System.out.println(Libro.getLibrosDisponibles());
+//        libro1.devolver(estudiante1);
+//        libro2.devolver(estudiante1);
+//        System.out.println(estudiante1);
 
 //        Persona_Temp persona1 = new Persona_Temp("Luis","Sanchez","12345213X",20,40);
 //        Equipo equipo1 = new Equipo("Real Mutxamel");
@@ -120,6 +121,17 @@ public class Main {
 //        System.out.println(equipo1.getComponentes());
 //        equipo1.anyadirComponente(persona1);
 //        System.out.println(equipo1.getComponentes());
+
+//        Instituto ies_alluser=new Instituto("IES ALLUSER");
+//        System.out.println(ies_alluser);
+//
+//        Instituto iesmutxamel=null;
+//        try{
+//            iesmutxamel=new Instituto(null);
+//        } catch (NullPointerException e) {
+//            System.out.println("El nombre no puede ser nulo");
+//        }
+//        System.out.println(iesmutxamel);
 
     }
 
