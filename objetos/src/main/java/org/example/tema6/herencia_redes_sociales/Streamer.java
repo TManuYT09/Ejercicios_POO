@@ -1,0 +1,19 @@
+package org.example.tema6.herencia_redes_sociales;
+
+public class Streamer extends Usuario{
+    private int numero_retransmisiones;
+    private int horas_directo;
+
+    public Streamer(String nombre, int edad, String usuario, int seguidores, int numero_retransmisiones, int horas_directo) {
+        super(nombre, edad, usuario, seguidores);
+        this.numero_retransmisiones=numero_retransmisiones;
+        this.horas_directo=horas_directo;
+    }
+
+    @Override
+    public void mostrarInfo(){
+        super.mostrarInfo();
+        System.out.println("Numero de retransmisiones: "+numero_retransmisiones);
+        System.out.println("Horas de directo: "+horas_directo);
+    }
+}

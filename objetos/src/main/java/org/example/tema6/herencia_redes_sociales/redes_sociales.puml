@@ -1,0 +1,33 @@
+@startuml
+class Usuario {
+    - String nombre
+    - int edad
+    - String usuario
+    - int seguidores
+    + Usuario(String nombre, int edad, String usuario, int seguidores)
+    + void mostrarInfo()
+}
+
+class Basico {
+    + Basico(String nombre, int edad, String usuario, int seguidores)
+    + void mostrarInfo()
+}
+
+class Influencer {
+    - ArrayList<String> colaboraciones
+    + Influencer(String nombre, int edad, String usuario, int seguidores)
+    + void anyadirColaboracion(String... colaboracion)
+    + void mostrarInfo()
+}
+
+class Streamer {
+    - int numero_retransmisiones
+    - int horas_directo
+    + Streamer(String nombre, int edad, String usuario, int seguidores, int numero_retransmisiones, int horas_directo)
+    + void mostrarInfo()
+}
+
+Usuario <|-- Basico
+Usuario <|-- Influencer
+Usuario <|-- Streamer
+@enduml
