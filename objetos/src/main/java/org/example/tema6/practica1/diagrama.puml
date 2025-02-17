@@ -1,0 +1,49 @@
+@startuml
+abstract class MetodoPago {
+    + void procesarPago(double importe)
+}
+
+class Bizum {
+    - String FORMATO_TELEFONO
+    - String telefono
+    - int pin
+    + Bizum(String telefono)
+    + int generarPin()
+    + boolean validarBizum()
+    + String getTelefono()
+    + int getPin()
+    + void setTelefono(String telefono)
+    + void setPin(int pin)
+    + void procesarPago(double importe)
+}
+
+class PayPal {
+    - String FORMATO_CORREO
+    - String cuenta
+    - double saldo
+    + PayPal(String cuenta)
+    + boolean validarPayPal()
+    + double getSaldo()
+    + String getCuenta()
+    + void setSaldo(double saldo)
+    + void setCuenta(String cuenta)
+    + void procesarPago(double importe)
+}
+
+class TarjetaCredito {
+    - String[] tiposTarjeta
+    - String nro_tarjeta
+    - String tipo
+    + TarjetaCredito(String nro_tarjeta, String tipo)
+    + boolean validarTarjeta()
+    + String getNro_tarjeta()
+    + String getTipo()
+    + void setNro_tarjeta(String nro_tarjeta)
+    + void setTipo(String tipo)
+    + void procesarPago(double importe)
+}
+
+MetodoPago <|-- Bizum
+MetodoPago <|-- PayPal
+MetodoPago <|-- TarjetaCredito
+@enduml

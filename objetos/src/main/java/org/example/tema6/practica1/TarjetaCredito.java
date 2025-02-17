@@ -1,7 +1,5 @@
 package org.example.tema6.practica1;
 
-import javax.swing.*;
-
 public class TarjetaCredito extends MetodoPago{
     private static final String[] tiposTarjeta={"VISA","MASTERCARD","MAESTRO"};
 

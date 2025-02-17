@@ -1,7 +1,7 @@
 package org.example.tema6.practica1;
 
 public class PayPal extends MetodoPago{
-    public static final String FORMATO_CORREO = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9+_.-].com$";
+    public static final String FORMATO_CORREO = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9+_.-]+.com$";
 
     private String cuenta;
     private double saldo;
