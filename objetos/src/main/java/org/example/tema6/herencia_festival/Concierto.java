@@ -19,6 +19,7 @@ public class Concierto {
         System.out.println("Información del organizador:");
         Organizador org = new Organizador("Augusto", 7, "Productor");
         org.mostrarInfo();
+        org.organizarEvento();
 
         System.out.println();
 
@@ -32,6 +33,9 @@ public class Concierto {
 
         for (Persona p : personas) {
             p.mostrarInfo(); //se ejecuta la versión sobrescrita de cada subclase
+            if(p instanceof Organizable){
+                ((Organizable) p).organizarEvento();
+            }
         }
 
         Persona artista = new Artista("Sofía", 25, "Rock Alternativo");
