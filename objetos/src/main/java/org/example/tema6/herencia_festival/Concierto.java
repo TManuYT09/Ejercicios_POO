@@ -1,9 +1,9 @@
 package org.example.tema6.herencia_festival;
 
 public class Concierto {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws EdadMinimaException {
 
-        Asistente a1 = new Asistente("Carlos", 25, TipoEntrada.VIP);
+        Asistente a1 = new Asistente("Carlos", 15, TipoEntrada.VIP);
         Artista art1 = new Artista("Dua Lipa", 28, "Pop");
 
         System.out.println("Información del asistente:");
