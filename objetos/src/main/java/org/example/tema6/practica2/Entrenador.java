@@ -6,7 +6,8 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
     private Equipos equipo;
     private String formacionPreferida;
 
-    public Entrenador(Equipos equipo, String formacionPreferida) {
+    public Entrenador(String nombre, int edad, Equipos equipo, String formacionPreferida) {
+        super(nombre, edad);
         this.equipo = equipo;
         setFormacionPreferida(formacionPreferida);
     }
