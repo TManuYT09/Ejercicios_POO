@@ -13,13 +13,12 @@ public class AppMantenimiento {
 
         do {
             imprimirMenuInicio();
-            switch (seleccionarOpcion()){
-                case "1":
-                    break;
-                case "2:":
-                    break;
+            switch (seleccionarOpcion().toUpperCase()){
                 case "3":
                     mantenimientoMasajista();
+                    break;
+                case "4":
+                    consultarEquipos();
                     break;
                 case "X":
                     System.out.println("Cerrando programa...");
@@ -52,9 +51,13 @@ public class AppMantenimiento {
 
     public static String seleccionarOpcion(){
         System.out.print("Selecciona una opcion --> ");
-        return entrada.next().toUpperCase();
+        return entrada.next();
     }
 
+    /*Opcion 1*/
+    /*Opcion 2*/
+
+    /*Opcion 3*/
     public static void mantenimientoMasajista(){
         boolean comp=true;
 
@@ -169,7 +172,7 @@ public class AppMantenimiento {
         }
 
         System.out.println();
-        System.out.println("===================================");
+        System.out.println("============================================================================");
         System.out.println();
     }
 
@@ -180,7 +183,22 @@ public class AppMantenimiento {
         System.out.println();
         System.out.println("¿Qué quieres modificar? [nombre,edad,titulo,añosExperiencia]");
         System.out.println();
-        System.out.println("===================================");
+        System.out.println("============================================================================");
         System.out.println();
+    }
+
+    /*Opcion 4*/
+    public static void menuConsulta(){
+        System.out.println("=== Consultar equipo ===");
+        System.out.println();
+        for (Equipos equipo : Equipos.values()){
+            System.out.print(equipo+", ");
+        }
+        System.out.println();
+        System.out.println("========================");
+    }
+
+    public static void consultarEquipos(){
+        menuConsulta();
     }
 }
