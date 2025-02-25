@@ -19,38 +19,37 @@ public class AppMutxamelFC {
         Acompañante acompañanteSenior4 = new Acompañante("Maria-Antoñera", 50,jugadorSenior4, "Tia quinta");
 
         // concentrarse()
-
+        jugadorSenior3.concentrarse();
         // entrenar()
-
+        jugadorSenior1.entrenar();
         // darMasaje() a algún jugador
         masajistaSenior.darMasaje(jugadorSenior1);
-
         // viajar() a Madrid
-
+        entrenadorSenior.viajar("Madrid");
         // planificarEntrenamiento()
         entrenadorSenior.planificarEntrenamiento();
-
         // entrenar()
-
+        jugadorSenior1.entrenar();
         // descansar()
-
+        jugadorSenior1.descansar();
         // calentar()
-
+        jugadorSenior2.calentar();
         // jugarPartido()
-
+        jugadorSenior3.jugarPartido("Betis");
         // animarEquipo()
-
+        acompañanteSenior4.animarEquipo();
         // hacerCambios()
-
+        entrenadorSenior.hacerCambios("4-2-3");
         // marcarGol()
-
+        jugadorSenior4.marcarGol();
         // celebrarGol()
-
+        acompañanteSenior4.celebrarGol();
         // darMasaje() a varios jugadores
-
+        masajistaSenior.darMasaje(jugadorSenior1);
+        masajistaSenior.darMasaje(jugadorSenior4);
         // viajar() a Mutxamel
-
+        jugadorSenior3.viajar("Mutxamel");
         // descansar()
-
+        jugadorSenior2.descansar();
     }
 }

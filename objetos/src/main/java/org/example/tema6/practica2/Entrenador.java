@@ -17,32 +17,36 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
     }
 
     public void hacerCambios(String formacion){
-
+        if (!formacion.matches(FOMACION_FORMATO)){
+            throw new FormacionFormatoException();
+        }else {
+            System.out.println("Cambia la formación a "+ formacion);
+        }
     }
 
     @Override
     public void concentrarse() {
-
+        System.out.println(getNombre()+" concentrándose para el partido...");
     }
 
     @Override
     public void viajar(String ciudad) {
-
+        System.out.println("Viajando a "+ciudad);
     }
 
     @Override
     public void celebrarGol() {
-
+        System.out.println("GOOOOOOOOOOOOOOL");
     }
 
     @Override
     public void entrenar() {
-
+        System.out.println(getNombre()+" esta celebrando un gol");
     }
 
     @Override
     public void jugarPartido(String rival) {
-
+        System.out.println("Jugando un partido contra "+rival);
     }
 
     public void setFormacionPreferida(String formacionPreferida) {
